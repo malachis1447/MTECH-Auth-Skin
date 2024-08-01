@@ -72,7 +72,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 </>
             }
         >
-            <div id="kc-form" className="form">
+            <div className="form" id="kc-form">
                 <div id="kc-form-wrapper">
                     {realm.password && (
                         <form
@@ -169,7 +169,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     disabled={isLoginButtonDisabled}
                                     className={clsx(
                                         kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                        "rounded-lg"
+                                        "rounded-lg button-submit"
                                     )}
                                     name="login"
                                     id="kc-login"

@@ -1,26 +1,84 @@
 @import url(./assets/fonts/geist/index.css);
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body.kcBodyClass {
-    @apply bg-[url(./assets/img/background.jpg)] bg-no-repeat bg-center bg-fixed;
+  background: -moz-linear-gradient(45deg, #0080FF 0%, #4A55FF 29%, #932BFF 66%, #DD00FF 100%);
+  background: -webkit-linear-gradient(45deg, #0080FF 0%, #4A55FF 29%, #932BFF 66%, #DD00FF 100%);
+  background: linear-gradient(45deg, #0080FF 0%, #4A55FF 29%, #932BFF 66%, #DD00FF 100%);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    /*min-height: calc(100vh - 2rem);*/
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    position: relative; 
+
     @apply font-geist;
+    backdrop-filter: blur(10px);
 }
+
 
 .kcHeaderWrapperClass{
     @apply text-3xl font-bold underline;
+    align: center;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #ffffff;
-    padding: 30px;
-    width: 450px;
-    border-radius: 20px;
+.kc-form {
+  width: flex;
+  height: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.kcFormCardClass {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(241, 243, 254, 0.80);
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+
+}
+
+.kc-info-wrapper {
+  font-size: 13px;
+  padding: 15px 35px;
+  border-radius: 10em;
+  background-color: rgba(241, 243, 254, 0.60);
+}
+
+.kc-info {
+  font-family: "Figtree", sans-serif;
+  font-size: 13px;
+  padding: 15px 35px;
+  border-radius: 10em;
+  background-color: rgba(241, 243, 254, 0.60);
+}
+
+.kcFormPasswordVisibilityButtonClass {
+  background: rgba(243, 243, 250, 0.80);
+  flex-direction: row;
+  border-radius: 10em;
+  border: none;
+}
+
+.kcFormOptionsWrapperClass {
+  font-family: "Figtree", sans-serif;
+}
+
+.kc-form-options {
+  font-family: "Figtree", sans-serif;
 }
 
 .form button {
@@ -28,21 +86,35 @@ body.kcBodyClass {
 }
 
 .flex-column > label {
-    color: #151717;
+    color: #414754;
     font-weight: 600;
 }
 
-.inputForm {
-    border: 1.5px solid #ecedec;
-    border-radius: 10px;
-    height: 50px;
+.kcInputGroup {
+    background: rgba(243, 243, 250, 0.80);
+    border: none;
+    border-radius: 10em;
     display: flex;
     align-items: center;
-    padding-left: 10px;
     transition: 0.2s ease-in-out;
   }
   
-  .input {
+  .kcLabelClass {
+    font-family: "Figtree", sans-serif;
+    font-size: 0.75rem;
+    color: #414754;
+    font-weight: 600;
+  }
+
+  .kcInputClass {
+    background: rgba(243, 243, 250, 0.80);
+    border-radius: 10rem;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .input:focus {
     margin-left: 10px;
     border-radius: 10px;
     border: none;
@@ -50,12 +122,14 @@ body.kcBodyClass {
     height: 100%;
   }
   
-  .input:focus {
-    outline: none;
-  }
-  
   .inputForm:focus-within {
-    border: 1.5px solid #2d79f3;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+    border: 1.5px solid #425e91;
   }
   
   .flex-row {
@@ -80,22 +154,6 @@ body.kcBodyClass {
     cursor: pointer;
   }
   
-  .button-submit {
-    margin: 20px 0 10px 0;
-    background-color: #151717;
-    border: none;
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 10px;
-    height: 50px;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  .button-submit:hover {
-    background-color: #252727;
-  }
   
   .p {
     text-align: center;
@@ -119,9 +177,41 @@ body.kcBodyClass {
     cursor: pointer;
     transition: 0.2s ease-in-out;
   }
+
+  .kcButtonClass {
+    margin-top: 10px;
+    font-family: "Figtree", sans-serif;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .button-submit {
+    border-radius: 10em;
+    background: #004ea0;
+  }
+
+  .button-submit:hover {
+    background: #564bc8;
+
+  }
   
   .btn:hover {
-    border: 1px solid #2d79f3;
+    border: 1px solid #425e91;
     ;
   }
+
+kcAlertClass {
+  background-color: #ffdad6;
+
+}
   
